@@ -1,0 +1,46 @@
+{
+  "name": "if-expression",
+  "version": "1.0.0",
+  "description": "JavaScript \"if\" as an expression",
+  "main": "out.js",
+  "files": [
+    "out.js",
+    "out.js.map"
+  ],
+  "dependencies": {
+    "babel-runtime": "^6.11.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-dead-code-elimination": "^2.1.0",
+    "babel-plugin-transform-inline-environment-variables": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-1": "^6.5.0"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test babel-node index.js",
+    "dist": "NODE_ENV=production babel index.js --source-maps --out-file out.js"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-1"
+    ],
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-runtime",
+          "transform-inline-environment-variables",
+          "transform-dead-code-elimination",
+          "add-module-exports"
+        ]
+      }
+    }
+  },
+  "keywords": [],
+  "author": "Tom Ashworth <tgvashworth@gmail.com>",
+  "license": "MIT"
+}
