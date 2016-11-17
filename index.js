@@ -14,7 +14,8 @@ export default function iff(...args) {
 
   // check the predicate
   const [p, c, ...rest] = args;
-  return (p ? c() : iff(...rest));
+  const f = (typeof c === 'function' ? c : () => c);
+  return (p ? f() : iff(...rest));
 }
 
 if (process.env.NODE_ENV === 'test') {
@@ -64,5 +65,14 @@ if (process.env.NODE_ENV === 'test') {
       0
     ) === 0,
     'returns default value if no clause matches and value supplied'
+  );
+
+  assert(
+    iff(
+      true,
+      1,
+      0
+    ) === 1,
+    'second clause is returned if it\'s not a function'
   );
 }

@@ -63,6 +63,18 @@ const message = iff(
 ); // => Not too shabby!
 ```
 
+You can even return a value from the truthy branch, if you really want:
+
+```js
+import iff from "if-expression";
+
+const message = iff(
+  true,
+  "Cool!",
+  "Not too shabby!"
+); // => Cool!
+```
+
 ## What to do if this makes you nervous...
 
 It can act like a statement too!
