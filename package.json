@@ -65,6 +65,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/phuu/if-expression.git"
-  }
+    "url": "https://github.com/tgvashworth/if-expression.git"
+  },
+  "version": "0.0.0-development"
 }
