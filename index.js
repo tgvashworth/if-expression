@@ -1,18 +1,18 @@
 export default function iff(...args) {
-  // nada left to do
-  if (!args.length) {
+  // Nada left to do
+  if (args.length === 0) {
     return;
   }
-  // else clause
+  // Else clause
   if (args.length === 1 && typeof args[0] === 'function') {
     return args[0]();
   }
-  // default value
+  // Default value
   if (args.length === 1) {
     return args[0];
   }
 
-  // check the predicate (initally, called q)
+  // Check the predicate (initally, called q)
   const [q, c, ...rest] = args;
   const p = (typeof q === 'function' ? q() : q);
   const f = (typeof c === 'function' ? c : () => c);
